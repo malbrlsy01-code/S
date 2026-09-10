@@ -1,0 +1,284 @@
+:root {
+    --deep-teal: #0a2a30;
+    --teal: #137e90;
+    --teal-light: #3aa6ba;
+    --cream: #f3ede0;
+    --pale-blue: #e0f2f7;
+    --ink: #0d2b30;
+    --muted: #5c6b6e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "cinzel", serif;
+}
+
+html[dir="rtl"] body {
+    font-family: "cinzel", serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-hero {
+    min-height: 68vh;
+    padding: 32px clamp(22px, 7vw, 110px) 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: var(--cream);
+    background:
+        linear-gradient(90deg, rgba(8, 30, 34, .92), rgba(8, 30, 34, .56) 55%, rgba(8, 30, 34, .18)),
+        url("photoooo/مطعم.png") center / cover;
+}
+
+html[dir="rtl"] .page-hero {
+    background:
+        linear-gradient(270deg, rgba(8, 30, 34, .92), rgba(8, 30, 34, .56) 55%, rgba(8, 30, 34, .18)),
+        url("photoooo/مطعم.png") center / cover;
+}
+
+.page-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 120px;
+    z-index: -1;
+    background: linear-gradient(transparent, var(--cream));
+}
+
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.back-link,
+.language-link {
+    border-bottom: 1px solid rgba(224, 242, 247, .55);
+    padding: 9px 0;
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+}
+
+.language-link {
+    min-width: 42px;
+    text-align: center;
+}
+
+.hero-copy {
+    max-width: 790px;
+    position: relative;
+    z-index: 1;
+     transform: translateY(-100px);
+}
+
+.eyebrow,
+.intro > span,
+.card-label {
+    color: var(--teal-light);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+html[dir="rtl"] .eyebrow,
+html[dir="rtl"] .intro > span,
+html[dir="rtl"] .card-label {
+    letter-spacing: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Cinzel",  serif;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+font-family: ""cinzel", serif;
+}
+
+h1 {
+    max-width: 760px;
+    margin: 18px 0 24px;
+    font-size: clamp(2.7rem, 7vw, 6.1rem);
+    font-weight: 600;
+    line-height: 1.06;
+}
+
+.hero-copy > p {
+    max-width: 660px;
+    color: rgba(243, 237, 224, .82);
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.85;
+   
+}
+
+
+.restaurants-wrap {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 76px 0 110px;
+}
+
+.intro {
+    max-width: 720px;
+    margin-bottom: 52px;
+}
+
+.intro h2 {
+    margin: 13px 0 17px;
+    font-size: clamp(2rem, 4.5vw, 3.7rem);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.intro > p {
+    color: var(--muted);
+    font-size: 1.04rem;
+    line-height: 1.8;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #c8dde2;
+    border-inline-start: 1px solid #c8dde2;
+}
+
+.restaurant-card {
+    min-height: 260px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    border-inline-end: 1px solid #c8dde2;
+    border-bottom: 1px solid #c8dde2;
+    background: rgba(255, 255, 255, .18);
+    transition: transform .28s ease, color .28s ease, background .28s ease;
+}
+
+.restaurant-card::after {
+    content: "";
+    width: 92px;
+    height: 92px;
+    position: absolute;
+    inset: auto -44px -44px auto;
+    border: 1px solid rgba(58, 166, 186, .45);
+    border-radius: 50%;
+    transition: transform .35s ease;
+}
+
+.restaurant-card:hover {
+    z-index: 1;
+    color: var(--cream);
+    background: var(--deep-teal);
+    transform: translateY(-5px);
+}
+
+.restaurant-card:hover::after {
+    transform: scale(1.35);
+}
+
+.card-number {
+    color: var(--teal);
+    font-family: "Cinzel", serif;
+    font-size: .74rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+}
+
+.card-label {
+    margin-top: 38px;
+}
+
+.restaurant-card h3 {
+    margin: 10px 0 14px;
+    font-size: 1.16rem;
+    line-height: 1.35;
+}
+
+.restaurant-card > p:last-child {
+    color: var(--muted);
+    font-size: .92rem;
+    line-height: 1.7;
+    transition: color .28s ease;
+}
+
+.restaurant-card:hover > p:last-child {
+    color: rgba(243, 237, 224, .75);
+}
+
+footer {
+    padding: 34px 24px;
+    text-align: center;
+    background: #137e90;
+    color: var(--cream);
+}
+
+footer a {
+    font-weight: 700;
+}
+
+footer span {
+    margin-inline-start: 8px;
+    color: var(--teal-light);
+}
+
+@media (max-width: 900px) {
+    .page-hero {
+        min-height: 60vh;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .page-hero {
+        min-height: 64vh;
+        padding-inline: 20px;
+    }
+
+    .restaurants-wrap {
+        width: min(100% - 28px, 1180px);
+        padding: 62px 0 80px;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-card {
+        min-height: 230px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto;
+        transition: none !important;
+    }
+}

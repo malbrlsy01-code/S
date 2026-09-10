@@ -1,0 +1,24 @@
+SANA TOWER - READY FULL STACK
+
+1) Open VS Code in this folder.
+2) Open terminal and run:
+   cd sana-tower-backend
+   npm install
+   npm run seed:admin
+   npm run dev
+
+3) Open website:
+   http://localhost:5000
+
+4) Open admin dashboard:
+   http://localhost:5000/admin/
+
+The website, admin dashboard and API now run from ONE server on port 5000.
+The Arabic and English contact forms save leads to MongoDB.
+
+To change admin login later:
+- Edit ADMIN_EMAIL and ADMIN_PASSWORD in sana-tower-backend/.env
+- Run: npm run seed:admin
+- Run: npm run dev
+
+SECURITY: If your MongoDB password has ever been shown in a screenshot, rotate it in MongoDB Atlas and update MONGODB_URI in .env.
